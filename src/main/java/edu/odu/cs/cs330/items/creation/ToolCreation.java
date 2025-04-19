@@ -1,5 +1,6 @@
 package edu.odu.cs.cs330.items.creation;
 
+import edu.odu.cs.cs330.items.Armour;
 import edu.odu.cs.cs330.items.Item;
 import edu.odu.cs.cs330.items.Tool;
 
@@ -22,14 +23,14 @@ public class ToolCreation implements ItemCreationStrategy
     public Item fromDefaults()
     {
         // Return a **Default** Tool
-        return null;
+        return new Tool();
     }
 
     @Override
     public int requiredNumberOfValues()
     {
         // Replace the return value;
-        return 0;
+        return 6;
     }
 
     @SuppressWarnings({
@@ -39,16 +40,16 @@ public class ToolCreation implements ItemCreationStrategy
     @Override
     public Item fromTokens(final String... tokens)
     {
-        /*
+        
         return new Tool(
-            tokens[0],
-            ...
-            ...
-            ...
-        );
-        */
+            tokens[0], //name
+            Integer.parseInt(tokens[2]), // durability
+            Integer.parseInt(tokens[3]), // speed
+            tokens[1], // material
+            tokens[4], // modifier
+            Integer.parseInt(tokens[5]) // modifier level
+        );   
 
-        return new Tool();
     }
 
     @SuppressWarnings({
@@ -65,6 +66,13 @@ public class ToolCreation implements ItemCreationStrategy
 
         Tool theOriginal = (Tool) original;
 
-        return null;
+         return new Tool(
+            theOriginal.getName(), 
+            theOriginal.getDurability(),
+            theOriginal.getSpeed(),
+            theOriginal.getMaterial(), 
+            theOriginal.getModifier(), 
+            theOriginal.getModifierLevel()
+        );
     }
 }
