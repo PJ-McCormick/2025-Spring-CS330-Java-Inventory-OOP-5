@@ -44,7 +44,11 @@ public class Armour extends Equippable implements Item
     public Armour()
     {
         super();
-
+        /* All attributes inherited from Equippable
+         * now declared as final. 
+         * New Armour will need to be created every time 
+         * one of these attributes changes.
+         */ 
         this.defense = 0;
     }
 
