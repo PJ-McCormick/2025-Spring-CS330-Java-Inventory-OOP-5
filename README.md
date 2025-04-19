@@ -24,3 +24,8 @@ Item:
 ArmourCreation:
    fromTokens and fromExisting methods must be changed to use constructor instead of setters that are no longer available.
 
+ToolCreation:
+   fromTokens and fromExisting methods must be changed to use constructor instead of setters that are no longer available.
+
+ConsumableCreation:
+   fromTokens and fromExisting methods must be changed to use constructor instead of setters that are no longer available.
